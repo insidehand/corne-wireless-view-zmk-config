@@ -23,7 +23,7 @@ jobs:
         run: pip install keymap-drawer
 
       - name: Parse keymap
-        run: keymap parse -c keymap-drawer-config.yaml -z config/corne.keymap > keymap.yaml
+        run: keymap parse -z config/corne.keymap > keymap.yaml
 
       - name: Draw keymap
         run: keymap draw -c keymap-drawer-config.yaml keymap.yaml > keymap.svg
