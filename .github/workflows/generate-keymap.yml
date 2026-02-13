@@ -1,0 +1,35 @@
+name: Generate Keymap
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+
+      - name: Install keymap-drawer
+        run: pip install keymap-drawer
+
+      - name: Parse keymap
+        run: keymap parse -z config/corne.keymap > keymap.yaml
+
+      - name: Draw keymap
+        run: keymap draw keymap.yaml > keymap.svg
+
+      - name: Commit keymap
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "docs: update keymap.svg"
+          file_pattern: keymap.svg
