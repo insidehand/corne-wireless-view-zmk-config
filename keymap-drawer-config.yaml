@@ -1,9 +1,5 @@
-# keymap-drawer configuration
-# This file maps ZMK keycodes to symbols for better visualization.
-
-draw_config:
-  # Define custom keycap labels for specific ZMK keycodes
-  custom_key_labels:
+parse_config:
+  zmk_keycode_map:
     # Modifiers
     LGUI: "⌘"
     RGUI: "⌘"
@@ -13,6 +9,7 @@ draw_config:
     RCTL: "⌃"
     LSFT: "⇧"
     RSFT: "⇧"
+    # Common keys
     TAB: "⇥"
     ESC: "⎋"
     BSPC: "⌫"
@@ -20,6 +17,7 @@ draw_config:
     ENT: "⏎"
     RET: "⏎"
     SPACE: "␣"
+    # Symbols
     MINUS: "-"
     EQUAL: "="
     LBKT: "["
@@ -41,22 +39,12 @@ draw_config:
     STAR: "*"
     LPAR: "("
     RPAR: ")"
-    MINS: "-"
     PLUS: "+"
     LCBR: "{"
     RCBR: "}"
     PIPE: "|"
     TILDE: "~"
     UNDER: "_"
-    # Layer navigation
-    MO: " momentarily" # Adjust for ZMK's &mo behavior if needed
-    TO: "to "
-    LT: "layer tap"
-    TG: "toggle"
-    OSM: "one-shot"
-    # Bluetooth
-    BT_CLR: "BT Clear"
-    BT_SEL: "BT Sel "
     # Numbers
     N0: "0"
     N1: "1"
@@ -77,6 +65,8 @@ draw_config:
     PGDN: "⇟"
     HOME: "⤒"
     END: "⤓"
+    # Bluetooth
+    BT_CLR: "BT Clear"
     # Media
     VOLU: "🔊"
     VOLD: "🔈"
